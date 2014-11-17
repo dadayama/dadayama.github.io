@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+<title>dadamemo</title>
+<link rel="alternate" href="http://dadayama.github.io/" />
+<author>dadayama</author>
+<generator uri="https://github.com/Songmu/p5-Riji" version="0.1.3">Perl Riji</generator>
+<id>tag:dadayama.github.io,2014-11-15:</id>
+<updated>2014-11-17T22:52:19+09:00</updated>
+<entry>
+<title type="text">メモ用にBlog開設</title>
+<link href="http://dadayama.github.io/entry/2014-11-17-01.html" />
+<author>
+<name>dadayama</name>
+</author>
+<content><![CDATA[<h1>メモ用にBlog開設</h1>
+
+<p>雑多にTips等を書き込んでいく予定。</p>
+]]></content>
+<id>tag:dadayama.github.io,2014-11-17:entry-2014-11-17-01.html</id>
+<published>2014-11-17T52:52:19+0900</published>
+<updated>2014-11-17T22:52:19+09:00</updated>
+</entry>
+</feed>
