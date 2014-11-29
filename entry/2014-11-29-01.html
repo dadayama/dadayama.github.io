@@ -6,7 +6,8 @@
   <link rel="alternate" type="application/atom+xml" title="Atom" href="http://dadayama.github.io/atom.xml">
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css" rel="stylesheet">
   <title>
-    dadamemo
+    Markdown記法 | dadamemo
+
   </title>
 </head>
 <body>
@@ -15,14 +16,20 @@
   </header>
   <section>
 <nav>
-  <ul>
-    <li><a href="http://dadayama.github.io/archives.html">Archives</a></li>
+  <ul class="paginate">
+    <li class="prev">prev: <a href="http://dadayama.github.io/entry/2014-11-27-01.html">CartonによるPerlモジュールの管理方法</a>
   </ul>
 </nav>
+
 <article>
-  <h1><a href="http://dadayama.github.io/entry/2014-11-29-01.html">Markdown記法</a></h1>
-  <time pubdate>2014-11-30 02:38</time>
-  
+  <aside class="tags">
+    <h1 class="tags">tags</h1>
+    <ul class="tags">
+      <li><a href="http://dadayama.github.io/tag/markdown.html">markdown</a></li>
+    </ul>
+  </aside>
+  <div class="entry">
+    <h1>Markdown記法</h1>
 
 <p>よく使う記法のみ抜粋。</p>
 
@@ -138,63 +145,18 @@ _斜体_
 </ul>
 
 
+  </div>
+  <dl class="meta">
+      <dt class="author">created by</dt>
+      <dd class="author">dadayama</dd>
+      <dt class="time">created at</dt>
+      <dd class="time"><time>2014-11-30 02:38</time></dd>
+      <dt class="author">last modified by</dt>
+      <dd class="author">dadayama</dd>
+      <dt class="time">last modified at</dt>
+      <dd class="time">2014-11-30 02:38</dd>
+  </dl>
 </article>
-<article>
-  <h1><a href="http://dadayama.github.io/entry/2014-11-27-01.html">CartonによるPerlモジュールの管理方法</a></h1>
-  <time pubdate>2014-11-28 16:10</time>
-  
-
-<p>とりあえず基本的な部分だけ。</p>
-
-<h2>cpanfile作成</h2>
-
-<pre><code>% cat &gt; cpanfile  
-requires '&lt;Perlモジュール名&gt;';  
-</code></pre>
-
-<p><code>requires '&lt;Perlモジュール名&gt;', '&lt;バージョン&gt;';</code>と書くことでバージョンの指定も可能。</p>
-
-<h2>Perlモジュールインストール</h2>
-
-<p>cpanfile.snapshotが追加される。</p>
-
-<pre><code>% cpan install
-</code></pre>
-
-<p><code>--deployment</code>フラグを付けると、利用可能なモジュールとバージョンのみをインストールする。</p>
-
-<h2>PerlモジュールをGit管理下より外す</h2>
-
-<p>local/ 以下にCarton管理下のモジュールが設置される為、これは管理から外す。</p>
-
-<pre><code>% echo local/ &gt;&gt; .gitignore
-</code></pre>
-
-<h2>Perlモジュールを使用する</h2>
-
-<pre><code>% carton exec &lt;Perlモジュール名&gt;
-</code></pre>
-
-<p>エイリアスで<code>carton exec</code>を<code>ce</code>等にすると楽。</p>
-
-</article>
-<article>
-  <h1><a href="http://dadayama.github.io/entry/2014-11-17-01.html">メモ用にBlog開設</a></h1>
-  <time pubdate>2014-11-17 22:52</time>
-  
-
-<p>雑多にTips等を書き込んでいく予定。</p>
-
-</article>
-<aside class="tags">
-  <h1>Tags</h1>
-  <ul class="tags">
-  <li><a href="http://dadayama.github.io/tag/perl.html">perl(2)</a></li>
-  <li><a href="http://dadayama.github.io/tag/carton.html">carton(1)</a></li>
-  <li><a href="http://dadayama.github.io/tag/markdown.html">markdown(1)</a></li>
-  <li><a href="http://dadayama.github.io/tag/note.html">note(1)</a></li>
-  </ul>
-</aside>
   </section>
   <footer>
     <p>author: dadayama</p>
