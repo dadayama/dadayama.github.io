@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <link rel="alternate" type="application/atom+xml" title="Atom" href="http://dadayama.github.io/atom.xml">
+  <link rel="stylesheet" href="http://dadayama.github.io/static/css/github.css" type="text/css" charset="utf-8">
+  <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0&#45;rc1/css/bootstrap.min.css" rel="stylesheet"> -->
+  <link rel="shortcut icon" href="http://dadayama.github.io/favicon.ico">
+  <title>
+    Vagrantの基本的な使い方 | dadamemo
+
+  </title>
+</head>
+<body>
+  <header>
+    <h1><a href="http://dadayama.github.io/">dadamemo</a></h1>
+  </header>
+  <section>
+<nav>
+  <ul class="paginate">
+    <li class="prev">prev: <a href="http://dadayama.github.io/entry/2014-11-29-01.html">Markdown記法</a>
+  </ul>
+</nav>
+
+<article>
+  <aside class="tags">
+    <h1 class="tags">tags</h1>
+    <ul class="tags">
+      <li><a href="http://dadayama.github.io/tag/vagrant.html">vagrant</a></li>
+    </ul>
+  </aside>
+  <div class="entry">
+    <h1>Vagrantの基本的な使い方</h1>
+
+<p><strong>Vagrant</strong>はハイパーバイザー上に仮想マシンを構築するツール。</p>
+
+<h2>インストール</h2>
+
+<p>以下サイトより任意のバージョンのパッケージをダウンロードし、インストール。<br/>
+<a href="https://www.vagrantup.com/">vagrantup.com</a></p>
+
+<h2>コマンド</h2>
+
+<h3>初期化</h3>
+
+<pre><code>% vagrant init
+</code></pre>
+
+<p><code>vagrant init &lt;BOX名&gt; &lt;BOXのURL&gt;</code>でBOXを指定して初期化することも出来る。<br/>
+<strong>BOX</strong>とは仮想マシンのテンプレートのような物。</p>
+
+<h3>BOXの制御</h3>
+
+<ul>
+<li><strong>BOX追加</strong></li>
+</ul>
+
+
+<!-- break -->
+
+
+<pre><code>% vagrant box add &lt;BOX名&gt; &lt;BOXのURL&gt;
+</code></pre>
+
+<p>BOXの一覧に新たなBOXを追加する。<br/>
+BOX名は任意の名前を付けられる。</p>
+
+<p>以下サイトよりBOXのURLを取得可能。<br/>
+<a href="http://www.vagrantbox.es/">Vagrantbox.es</a></p>
+
+<ul>
+<li><strong>BOXの一覧表示</strong></li>
+</ul>
+
+
+<!-- break -->
+
+
+<pre><code>% vagrant box list
+</code></pre>
+
+<h3>仮想マシン起動</h3>
+
+<pre><code>% vagrant up
+</code></pre>
+
+<h3>仮想マシンの一時停止</h3>
+
+<pre><code>% vagrant suspend
+</code></pre>
+
+<p>再開する場合は<code>vagrant up</code>。</p>
+
+<h3>仮想マシンの停止</h3>
+
+<pre><code>% vagrant halt
+</code></pre>
+
+<p>ホストマシンを終了させる場合、必ず仮想マシンを停止させる。</p>
+
+<h3>仮想マシンの再起動</h3>
+
+<pre><code>% vagrant reload
+</code></pre>
+
+<h3>仮想マシンの破棄</h3>
+
+<pre><code>% vagrant destroy
+</code></pre>
+
+<h3>仮想マシンの状態確認</h3>
+
+<pre><code>% vagrant status
+</code></pre>
+
+<h3>仮想マシンへのSSH接続</h3>
+
+<pre><code>% vagrant ssh
+</code></pre>
+
+<h3>仮想マシンのSSH情報表示</h3>
+
+<pre><code>% vagrant ssh-config
+</code></pre>
+
+<p><code>vagrant ssh-config &gt;&gt; ~/.ssh/config</code>と入力することで、sshコマンドでの接続が可能に。</p>
+
+  </div>
+  <dl class="meta">
+      <dt class="author">created by</dt>
+      <dd class="author">dadayama</dd>
+      <dt class="time">created at</dt>
+      <dd class="time"><time>2014-12-11 00:15</time></dd>
+      <dt class="author">last modified by</dt>
+      <dd class="author">dadayama</dd>
+      <dt class="time">last modified at</dt>
+      <dd class="time">2014-12-11 00:15</dd>
+  </dl>
+</article>
+  </section>
+  <footer>
+    <p>author: dadayama</p>
+  </footer>
+
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js"></script>
+  <script src="//google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
+  <script>$(function(){$('pre > code').addClass('prettyprint');});</script>
+</body>
+</html>

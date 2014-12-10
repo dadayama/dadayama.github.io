@@ -5,7 +5,112 @@
 <author>dadayama</author>
 <generator uri="https://github.com/Songmu/p5-Riji" version="0.1.3">Perl Riji</generator>
 <id>tag:dadayama.github.io,2014-11-15:</id>
-<updated>2014-11-30T02:38:17+09:00</updated>
+<updated>2014-12-11T00:15:14+09:00</updated>
+<entry>
+<title type="text">Vagrantの基本的な使い方</title>
+<link href="http://dadayama.github.io/entry/2014-12-10-01.html" />
+<author>
+<name>dadayama</name>
+</author>
+<content><![CDATA[<h1>Vagrantの基本的な使い方</h1>
+
+<p><strong>Vagrant</strong>はハイパーバイザー上に仮想マシンを構築するツール。</p>
+
+<h2>インストール</h2>
+
+<p>以下サイトより任意のバージョンのパッケージをダウンロードし、インストール。<br/>
+<a href="https://www.vagrantup.com/">vagrantup.com</a></p>
+
+<h2>コマンド</h2>
+
+<h3>初期化</h3>
+
+<pre><code>% vagrant init
+</code></pre>
+
+<p><code>vagrant init &lt;BOX名&gt; &lt;BOXのURL&gt;</code>でBOXを指定して初期化することも出来る。<br/>
+<strong>BOX</strong>とは仮想マシンのテンプレートのような物。</p>
+
+<h3>BOXの制御</h3>
+
+<ul>
+<li><strong>BOX追加</strong></li>
+</ul>
+
+
+<!-- break -->
+
+
+<pre><code>% vagrant box add &lt;BOX名&gt; &lt;BOXのURL&gt;
+</code></pre>
+
+<p>BOXの一覧に新たなBOXを追加する。<br/>
+BOX名は任意の名前を付けられる。</p>
+
+<p>以下サイトよりBOXのURLを取得可能。<br/>
+<a href="http://www.vagrantbox.es/">Vagrantbox.es</a></p>
+
+<ul>
+<li><strong>BOXの一覧表示</strong></li>
+</ul>
+
+
+<!-- break -->
+
+
+<pre><code>% vagrant box list
+</code></pre>
+
+<h3>仮想マシン起動</h3>
+
+<pre><code>% vagrant up
+</code></pre>
+
+<h3>仮想マシンの一時停止</h3>
+
+<pre><code>% vagrant suspend
+</code></pre>
+
+<p>再開する場合は<code>vagrant up</code>。</p>
+
+<h3>仮想マシンの停止</h3>
+
+<pre><code>% vagrant halt
+</code></pre>
+
+<p>ホストマシンを終了させる場合、必ず仮想マシンを停止させる。</p>
+
+<h3>仮想マシンの再起動</h3>
+
+<pre><code>% vagrant reload
+</code></pre>
+
+<h3>仮想マシンの破棄</h3>
+
+<pre><code>% vagrant destroy
+</code></pre>
+
+<h3>仮想マシンの状態確認</h3>
+
+<pre><code>% vagrant status
+</code></pre>
+
+<h3>仮想マシンへのSSH接続</h3>
+
+<pre><code>% vagrant ssh
+</code></pre>
+
+<h3>仮想マシンのSSH情報表示</h3>
+
+<pre><code>% vagrant ssh-config
+</code></pre>
+
+<p><code>vagrant ssh-config &gt;&gt; ~/.ssh/config</code>と入力することで、sshコマンドでの接続が可能に。</p>
+]]></content>
+<id>tag:dadayama.github.io,2014-12-11:entry-2014-12-10-01.html</id>
+<published>2014-12-11T15:15:14+0900</published>
+<updated>2014-12-11T00:15:14+09:00</updated>
+</entry>
 <entry>
 <title type="text">Markdown記法</title>
 <link href="http://dadayama.github.io/entry/2014-11-29-01.html" />
