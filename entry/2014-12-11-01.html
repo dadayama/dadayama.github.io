@@ -8,7 +8,8 @@
   <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0&#45;rc1/css/bootstrap.min.css" rel="stylesheet"> -->
   <link rel="shortcut icon" href="http://dadayama.github.io/favicon.ico">
   <title>
-    dadamemo
+    Vagrantの基本設定項目 | dadamemo
+
   </title>
 </head>
 <body>
@@ -17,14 +18,20 @@
   </header>
   <section>
 <nav>
-  <ul>
-    <li><a href="http://dadayama.github.io/archives.html">Archives</a></li>
+  <ul class="paginate">
+    <li class="prev">prev: <a href="http://dadayama.github.io/entry/2014-12-10-01.html">Vagrantの基本的な使い方</a>
   </ul>
 </nav>
+
 <article>
-  <h1><a href="http://dadayama.github.io/entry/2014-12-11-01.html">Vagrantの基本設定項目</a></h1>
-  <time pubdate>2014-12-15 21:14</time>
-  
+  <aside class="tags">
+    <h1 class="tags">tags</h1>
+    <ul class="tags">
+      <li><a href="http://dadayama.github.io/tag/vagrant.html">vagrant</a></li>
+    </ul>
+  </aside>
+  <div class="entry">
+    <h1>Vagrantの基本設定項目</h1>
 
 <p>Vagrantfileを使って各種項目を設定していく。<br/>
 ここでは仮想化ソフトウェアに「VirtualBox」を用いる事が前提。<br/>
@@ -353,283 +360,18 @@ ssh-agentは鍵認証におけるパスフレーズの入力をログイン時�
 <pre><code>config.ssh.forwarded_port = true
 </code></pre>
 
+  </div>
+  <dl class="meta">
+      <dt class="author">created by</dt>
+      <dd class="author">dadayama</dd>
+      <dt class="time">created at</dt>
+      <dd class="time"><time>2014-12-15 21:14</time></dd>
+      <dt class="author">last modified by</dt>
+      <dd class="author">dadayama</dd>
+      <dt class="time">last modified at</dt>
+      <dd class="time">2014-12-15 21:14</dd>
+  </dl>
 </article>
-<article>
-  <h1><a href="http://dadayama.github.io/entry/2014-12-10-01.html">Vagrantの基本的な使い方</a></h1>
-  <time pubdate>2014-12-11 00:15</time>
-  
-
-<p><strong>Vagrant</strong>はハイパーバイザー上に仮想マシンを構築するツール。</p>
-
-<h2>インストール</h2>
-
-<p>以下サイトより任意のバージョンのパッケージをダウンロードし、インストール。<br/>
-<a href="https://www.vagrantup.com/">vagrantup.com</a></p>
-
-<h2>コマンド</h2>
-
-<h3>初期化</h3>
-
-<pre><code>% vagrant init
-</code></pre>
-
-<p><code>vagrant init &lt;BOX名&gt; &lt;BOXのURL&gt;</code>でBOXを指定して初期化することも出来る。<br/>
-<strong>BOX</strong>とは仮想マシンのテンプレートのような物。</p>
-
-<h3>BOXの制御</h3>
-
-<ul>
-<li><strong>BOX追加</strong></li>
-</ul>
-
-
-<!-- break -->
-
-
-<pre><code>% vagrant box add &lt;BOX名&gt; &lt;BOXのURL&gt;
-</code></pre>
-
-<p>BOXの一覧に新たなBOXを追加する。<br/>
-BOX名は任意の名前を付けられる。</p>
-
-<p>以下サイトよりBOXのURLを取得可能。<br/>
-<a href="http://www.vagrantbox.es/">Vagrantbox.es</a></p>
-
-<ul>
-<li><strong>BOXの一覧表示</strong></li>
-</ul>
-
-
-<!-- break -->
-
-
-<pre><code>% vagrant box list
-</code></pre>
-
-<h3>仮想マシン起動</h3>
-
-<pre><code>% vagrant up
-</code></pre>
-
-<h3>仮想マシンの一時停止</h3>
-
-<pre><code>% vagrant suspend
-</code></pre>
-
-<p>再開する場合は<code>vagrant up</code>。</p>
-
-<h3>仮想マシンの停止</h3>
-
-<pre><code>% vagrant halt
-</code></pre>
-
-<p>ホストマシンを終了させる場合、必ず仮想マシンを停止させる。</p>
-
-<h3>仮想マシンの再起動</h3>
-
-<pre><code>% vagrant reload
-</code></pre>
-
-<h3>仮想マシンの破棄</h3>
-
-<pre><code>% vagrant destroy
-</code></pre>
-
-<h3>仮想マシンの状態確認</h3>
-
-<pre><code>% vagrant status
-</code></pre>
-
-<h3>仮想マシンへのSSH接続</h3>
-
-<pre><code>% vagrant ssh
-</code></pre>
-
-<h3>仮想マシンのSSH情報表示</h3>
-
-<pre><code>% vagrant ssh-config
-</code></pre>
-
-<p><code>vagrant ssh-config &gt;&gt; ~/.ssh/config</code>と入力することで、sshコマンドでの接続が可能に。</p>
-
-</article>
-<article>
-  <h1><a href="http://dadayama.github.io/entry/2014-11-29-01.html">Markdown記法</a></h1>
-  <time pubdate>2014-11-30 02:38</time>
-  
-
-<p>よく使う記法のみ抜粋。</p>
-
-<h2>文字装飾</h2>
-
-<h3>見出し</h3>
-
-<p>文頭に「#」で見出し。</p>
-
-<pre><code>  # h1
-  ## h2
-  ### h3
-  #### h4
-  ##### h5
-  ###### h6
-</code></pre>
-
-<h3>強調</h3>
-
-<p>「__」か「**」で囲むと太字。</p>
-
-<p>「_」か「*」で囲むと斜体。</p>
-
-<pre><code>**太字**
-__太字__
-*斜体*
-_斜体_
-</code></pre>
-
-<h3>打ち消し線</h3>
-
-<p>「~~」で囲むと打ち消し線。</p>
-
-<pre><code>~~打ち消し線~~
-</code></pre>
-
-<h2>リスト</h2>
-
-<h3>Disc型</h3>
-
-<p>「-」「+」「*」のいずれかでDisc型リスト。</p>
-
-<pre><code>- リスト
-+ リスト
-* リスト
-</code></pre>
-
-<h3>Decimal型</h3>
-
-<p>「数値.」でDecimal型リスト。</p>
-
-<pre><code>1. リスト
-2. リスト
-</code></pre>
-
-<h2>コード</h2>
-
-<p>半角スペース4つでコードブロック。<br/>
-あるいは段落を「```」で囲む。<br/>
-文中に記述するならば「`」でその箇所を囲む。</p>
-
-<pre><code>```
-コードブロック
-```
-
-文中に`コード`を含める場合
-</code></pre>
-
-<h2>引用</h2>
-
-<p>文頭に「>」で引用。</p>
-
-<pre><code>&gt; 引用文
-</code></pre>
-
-<h2>リンク</h2>
-
-<h3>タイトルあり</h3>
-
-<pre><code>[リンクテキスト](URL "タイトル")
-</code></pre>
-
-<h3>タイトル無し</h3>
-
-<pre><code>[リンクテキスト](URL)
-</code></pre>
-
-<h2>水平線</h2>
-
-<p>以下のパターンで水平線が表示される。<br/>
-（他にもパターンあり）</p>
-
-<pre><code>***
-* * *
-- - -
-</code></pre>
-
-<h2>テーブル</h2>
-
-<p>以下のパターンでテーブル表示。</p>
-
-<pre><code>| left | center | right |
-|:-----|--------|-------|
-| 1    |   2    |     3 |
-| a    |   b    |     c |
-</code></pre>
-
-<h2>その他</h2>
-
-<ul>
-<li>文末に半角スペース2つで段落内改行。</li>
-<li>バックスラッシュ「\」を記号の前に記述すると、markdown記法を無効化できる。</li>
-</ul>
-
-
-</article>
-<article>
-  <h1><a href="http://dadayama.github.io/entry/2014-11-27-01.html">CartonによるPerlモジュールの管理方法</a></h1>
-  <time pubdate>2014-11-28 16:10</time>
-  
-
-<p>とりあえず基本的な部分だけ。</p>
-
-<h2>cpanfile作成</h2>
-
-<pre><code>% cat &gt; cpanfile  
-requires '&lt;Perlモジュール名&gt;';  
-</code></pre>
-
-<p><code>requires '&lt;Perlモジュール名&gt;', '&lt;バージョン&gt;';</code>と書くことでバージョンの指定も可能。</p>
-
-<h2>Perlモジュールインストール</h2>
-
-<p>cpanfile.snapshotが追加される。</p>
-
-<pre><code>% cpan install
-</code></pre>
-
-<p><code>--deployment</code>フラグを付けると、利用可能なモジュールとバージョンのみをインストールする。</p>
-
-<h2>PerlモジュールをGit管理下より外す</h2>
-
-<p>local/ 以下にCarton管理下のモジュールが設置される為、これは管理から外す。</p>
-
-<pre><code>% echo local/ &gt;&gt; .gitignore
-</code></pre>
-
-<h2>Perlモジュールを使用する</h2>
-
-<pre><code>% carton exec &lt;Perlモジュール名&gt;
-</code></pre>
-
-<p>エイリアスで<code>carton exec</code>を<code>ce</code>等にすると楽。</p>
-
-</article>
-<article>
-  <h1><a href="http://dadayama.github.io/entry/2014-11-17-01.html">メモ用にBlog開設</a></h1>
-  <time pubdate>2014-11-17 22:52</time>
-  
-
-<p>雑多にTips等を書き込んでいく予定。</p>
-
-</article>
-<aside class="tags">
-  <h1>Tags</h1>
-  <ul class="tags">
-  <li><a href="http://dadayama.github.io/tag/perl.html">perl(2)</a></li>
-  <li><a href="http://dadayama.github.io/tag/vagrant.html">vagrant(2)</a></li>
-  <li><a href="http://dadayama.github.io/tag/carton.html">carton(1)</a></li>
-  <li><a href="http://dadayama.github.io/tag/markdown.html">markdown(1)</a></li>
-  <li><a href="http://dadayama.github.io/tag/note.html">note(1)</a></li>
-  </ul>
-</aside>
   </section>
   <footer>
     <p>author: dadayama</p>
