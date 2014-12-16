@@ -250,7 +250,7 @@ end
 <h3>config.vm.synced_folder</h3>
 
 <p>ゲストOS、ホストOSで共有するフォルダを指定出来る。<br/>
-また、デフォルトではゲストOSの<code>Vagrantfile</code>のあるフォルダ、ホストOSの<code>/vagrant</code>フォルダが共有される。</p>
+また、デフォルトではホストOSの<code>Vagrantfile</code>のあるフォルダ、ゲストOSの<code>/vagrant</code>フォルダが共有される。</p>
 
 <pre><code>config.vm.synced_folder '&lt;ホストOSの共有フォルダパス&gt;', '&lt;ゲストOSの共有フォルダ絶対パス&gt;', &lt;パラメータ名&gt;: '&lt;パラメータ&gt;',…
 </code></pre>
@@ -314,12 +314,12 @@ Vagrantは以下の共有プロトコルを提供している。</p>
 
 <p><strong>設定例: シェルスクリプトを直接記述</strong></p>
 
-<pre><code>config.vm.provision :shell, :inline ==&gt; 'Hello, world!'
+<pre><code>config.vm.provision :shell, :inline =&gt; 'echo Hello, world!'
 </code></pre>
 
 <p><strong>設定例: シェルスクリプトファイルのパスを渡す</strong></p>
 
-<pre><code>config.vm.provision :shell, :path ==&gt; './shell.sh'
+<pre><code>config.vm.provision :shell, :path =&gt; './shell.sh'
 </code></pre>
 
 <h2>SSH接続のユーザ名設定</h2>
